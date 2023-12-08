@@ -50,10 +50,10 @@ public class IncidentController {
     })
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<IncidentDTO> updateIncident(@PathVariable Long id,
+    public ResponseEntity<IncidentUpdateRequest> updateIncident(@PathVariable Long id,
                                                       @RequestBody IncidentUpdateRequest updateRequest) {
         // Call the service to update the incident
-        IncidentDTO updatedIncident = service.updateIncident(id, updateRequest);
+        IncidentUpdateRequest updatedIncident = service.updateIncident(id, updateRequest);
 
         // Return a ResponseEntity with the updated incident and a status code of 200 (OK)
         return new ResponseEntity<>(updatedIncident, HttpStatus.OK);
@@ -78,7 +78,7 @@ public class IncidentController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "OK"),
     })
-    @GetMapping("list")
+    @GetMapping("/list")
 
     public ResponseEntity<List<IncidentDTO>> listAllIncidents() {
 

@@ -2,6 +2,7 @@ package com.incidentsservice.diazero.service;
 
 import com.incidentsservice.diazero.model.dto.IncidentDTO;
 import com.incidentsservice.diazero.model.dto.IncidentUpdateRequest;
+import com.incidentsservice.diazero.model.entity.Incident;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface IncidentService {
 
     IncidentDTO registerIncident(IncidentDTO incidentDTO);
 
-    IncidentDTO updateIncident(Long id, IncidentUpdateRequest updateRequest);
+    IncidentUpdateRequest updateIncident(Long id, IncidentUpdateRequest updateRequest);
 
     void deleteIncident(Long id);
 
@@ -19,7 +20,7 @@ public interface IncidentService {
 
     IncidentDTO getIncidentById(Long id);
 
-    IncidentDTO validateIncident(IncidentDTO incident);
+    Boolean validateIncident(IncidentDTO incidentDTO);
 
     List<IncidentDTO> getLast20Incidents();
 }

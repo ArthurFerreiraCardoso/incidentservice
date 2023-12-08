@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IncidentReposity extends JpaRepository<Incident, Long> {
+public interface IncidentRepository extends JpaRepository<Incident, Long> {
 
     boolean existsByName(String name);
 
